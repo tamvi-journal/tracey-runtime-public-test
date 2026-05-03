@@ -1,4 +1,6 @@
-# 🐟 tracey-runtime-public-test
+# ![Tracey Fish Logo](assets/logo.png)
+
+# 🐟 tracey-runtime-public-test# 🐟 tracey-runtime-public-test
 
 > A public test harness for bounded AI runtime discipline: monitor, gate, verification, and viewer-only audit UX.
 
