@@ -2,9 +2,6 @@
   <img src="assets/hero-runtime-fish-banner.svg" alt="Tracey Runtime Public Test banner" width="100%" />
 </p>
 
-<p align="center">
-  <img src="assets/logo.png" alt="Tracey fish logo" width="120" />
-</p>
 
 # Tracey Runtime Public Test
 
