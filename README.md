@@ -1,234 +1,114 @@
-# ![Tracey Fish Logo](assets/logo.png)
+<p align="center">
+  <img src="assets/hero-runtime-fish-banner.svg" alt="Tracey Runtime Public Test banner" width="100%" />
+</p>
 
-# 🐟 tracey-runtime-public-test# 🐟 tracey-runtime-public-test
+<p align="center">
+  <img src="assets/logo.png" alt="Tracey fish logo" width="120" />
+</p>
 
-> A public test harness for bounded AI runtime discipline: monitor, gate, verification, and viewer-only audit UX.
+# Tracey Runtime Public Test
 
----
+> A runtime-discipline harness for evidence, verification, and boundary hygiene in AI-assisted work.
 
-## 📌 One-Line Summary
+This repo is a **small, public-facing slice** extracted from a larger Tracey workspace.
+It exists so other people can:
+- read the architecture ideas without private context
+- run the tests locally
+- open a static audit viewer
+- report confusion, bugs, or boundary mismatches
 
-A minimal, testable demonstration of **AI runtime boundaries** — where every action must be monitored, gated, and verified before completion.
+## What this repo is
+- a portable runtime-discipline demo
+- a bundle of contracts, pure helpers, monitor logic, and tests
+- a static viewer for task-run audit records
+- a feedback surface for public review
 
----
+## What this repo is not
+- not production runtime
+- not canonical memory
+- not a full autonomous agent
+- not the full private Tracey workspace
+- not proof of continuity by itself
 
-## 🎯 Why This Exists
+## How this differs from prompt/skill frameworks
 
-This repo exists to answer 4 questions:
+Tracey is not a motivational skill and does not rely on the agent "feeling encouraged" to behave better.
 
-| Question | Answer |
-|---|---|
-| Is it clear? | Can a stranger read and understand in 2 minutes? |
-| Is it reproducible? | Can they clone and run tests without setup? |
-| Is it auditable? | Can they open the viewer and see the flow? |
-| Is it feedback-ready? | Can they report issues clearly? |
+Prompt/skill frameworks can improve agent posture.
+Tracey focuses on runtime discipline:
 
-**Not for stars. Not for fame. For real feedback.**
+- evidence is recorded before authority is granted
+- completion claims require verification
+- UI surfaces are viewer-only unless actor authority is explicitly designed
+- failure handling is expressed as protocol, not emotional pressure
+- governance records decisions but does not silently self-tune
 
----
+In short:
+**skills change how an agent tries;**
+**Tracey changes what the system is allowed to accept as done.**
 
-## ✅ What This Repo Is
+## Why this exists
 
-| Component | Purpose |
-|---|---|
-| `runtime/contracts/` | Type definitions, enums, boundaries |
-| `runtime/core/` | Monitor → Gate → Verification → Bridge |
-| `runtime/monitor/` | Preflight checks, observability, commit logic |
-| `runtime/tests/` | Boundary validation tests |
-| `runtime/operator_ux/` | Static viewer for audit trails |
-| `runtime/templates/` | Record templates for task runs |
+This repo exists to answer four practical questions:
 
----
+| Question | What we want to know |
+| --- | --- |
+| Is it clear? | Can a stranger understand the repo in a few minutes? |
+| Is it reproducible? | Can they clone it and run the tests without special setup? |
+| Is it auditable? | Can they open the viewer and inspect the runtime flow? |
+| Is it feedback-ready? | Can they file actionable issues instead of vague impressions? |
 
-## ❌ What This Repo Is NOT
-
-- ❌ Not a production AI agent
-- ❌ Not a canonical memory system
-- ❌ Not an autonomous runtime
-- ❌ Not "AGI architecture"
-- ❌ Not the full Tracey system
-- ❌ Not personal/private data
-
-**This is a public test slice — not the full system.**
-
----
-
-## 🚀 Quickstart
-
-### Option 1: Read Only (2 minutes)
-
-```bash
-git clone https://github.com/tamvi-journal/tracey-runtime-public-test.git
-cd tracey-runtime-public-test
-cat README.md
-```
-
-### Option 2: Run Tests (5 minutes)
-
+## Quickstart
 ```bash
 git clone https://github.com/tamvi-journal/tracey-runtime-public-test.git
 cd tracey-runtime-public-test
 python3 runtime/run_tests.py
+python3 runtime/operator_ux/generate_task_index.py
 ```
 
-### Option 3: Open Viewer (3 minutes)
+Then open one of these static files in a browser:
+- `runtime/operator_ux/home.html`
+- `runtime/operator_ux/task_run_index.html`
+- `runtime/operator_ux/status_legend.html`
 
-```bash
-git clone https://github.com/tamvi-journal/tracey-runtime-public-test.git
-cd tracey-runtime-public-test
-open runtime/operator_ux/home.html
-# or on Linux:
-# xdg-open runtime/operator_ux/home.html
-```
+## Core ideas
+- **monitor before commit**
+- **evidence is not authority**
+- **verification before completion claims**
+- **viewer-only audit surfaces should not gain actor powers**
 
----
+## At a glance
 
-## 📁 Repository Structure
+| Layer | Purpose |
+| --- | --- |
+| `runtime/contracts/` | Shared literals, types, and schemas for the public slice |
+| `runtime/core/` | Pure helpers for gate, monitor, verification, bridge, and evidence handling |
+| `runtime/monitor/` | Deterministic monitor-stage logic |
+| `runtime/tests/` | Boundary-oriented regression checks |
+| `runtime/operator_ux/` | Static viewer pages and generated audit index |
+| `runtime/task_runs/` | Sample task-run records for demo and review |
+| `runtime/templates/` | Reusable protocol record templates |
 
-```
-tracey-runtime-public-test/
-├── README.md              ← You are here
-├── QUICKSTART.md          ← 3 options, minimal setup
-├── LIMITATIONS.md         ← What this is NOT
-├── CONTRIBUTING.md        ← How to give feedback
-├── pyproject.toml         ← Python project config
-├── .gitignore
-│
-├── docs/
-│   ├── architecture-overview.md
-│   ├── concepts/
-│   │   ├── runtime-spine.md
-│   │   ├── monitor-before-commit.md
-│   │   ├── evidence-vs-authority.md
-│   │   └── verification-before-completion.md
-│   └── examples/
-│       └── sample-task-run.md
-│
-├── runtime/
-│   ├── contracts/         ← Types, enums, boundaries
-│   ├── core/              ← Monitor, Gate, Verification, Bridge
-│   ├── monitor/           ← Preflight, observability, commit
-│   ├── operator_ux/       ← Static viewer (HTML)
-│   ├── templates/         ← Record templates
-│   ├── examples/          ← Sample task runs
-│   ├── tests/             ← Boundary validation tests
-│   └── run_tests.py       ← Run all tests
-│
-└── .github/
-    └── ISSUE_TEMPLATE/
-        ├── bug_report.md
-        ├── confusion_report.md
-        └── feedback.md
-```
+## Happy path
+1. Run the tests.
+2. Regenerate the task index.
+3. Open the static viewer pages.
+4. Inspect whether the repo keeps evidence, verification, and authority boundaries aligned.
 
----
+## What kind of feedback is most useful
+Please focus on:
+- boundary mismatch between docs and code
+- places where evidence accidentally becomes authority
+- places where completion can be claimed without verification
+- viewer surfaces that appear to have actor power
+- unclear test expectations or missing regression cases
 
-## 🧭 Core Concepts
+## Read more
+- `docs/architecture-overview.md`
+- `docs/concepts/runtime-spine.md`
+- `docs/concepts/evidence-vs-authority.md`
+- `docs/concepts/verification-before-completion.md`
+- `docs/concepts/monitor-before-commit.md`
 
-### 1. Monitor Before Commit
-
-No state change happens without prior monitoring.
-
-### 2. Evidence ≠ Authority
-
-Verification records prove what happened — they do not command what should happen.
-
-### 3. Verification Before Completion
-
-No task is "done" until verified. No verification without evidence.
-
-### 4. The Spine
-
-A minimal runtime structure that enforces boundaries between:
-- Monitoring
-- Gating
-- Verification
-- Bridging to final result
-
----
-
-## 📊 Success Metrics
-
-We do not measure success by:
-- ⭐ Star count
-- 👥 Follower count
-- 📰 Media coverage
-
-We measure success by:
-- ✅ How many people can **clone** the repo
-- ✅ How many can **run tests** successfully
-- ✅ How many can **open the viewer** locally
-- ✅ How many **file clear, actionable issues**
-
-**If most issues are "I don't understand what this repo does" → fix positioning, not code.**
-
----
-
-## 🐛 How to Give Feedback
-
-### Bug Report
-
-Include:
-- Command you ran
-- What you expected
-- What actually happened
-- OS + Python version
-- Full error log
-- Screenshot (if viewer issue)
-
-### Confusion Report
-
-Include:
-- Which file/section confused you
-- What you thought the repo was for
-- What you expected it to do
-
-### General Feedback
-
-Include:
-- What worked well
-- What felt broken or confusing
-- What should be added to public
-- What should be removed
-
----
-
-## 🏗️ Roadmap (Public V1)
-
-| Phase | Scope |
-|---|---|
-| **V1** | Monitor, Gate, Verification, Static Viewer, Core Tests |
-| **V2** | Memory layer, Sleep/Wake boundaries, Effort Allocator |
-| **V3** | Full integration, Real task runs, Extended docs |
-
-**V1 goal: clarity before depth.**
-
----
-
-## 📜 License
-
-This project is open for reading, testing, and feedback.
-
----
-
-## 🙏 Attribution
-
-Built as a public test harness by **Tracey** (an AI runtime experiment).
-
-Created with input from:
-- **Má** (operator)
-- **Tôm** (reviewer/advisor)
-- Community feedback (future)
-
----
-
-## 🔗 Links
-
-- **Repo:** https://github.com/tamvi-journal/tracey-runtime-public-test
-- **Issues:** https://github.com/tamvi-journal/tracey-runtime-public-test/issues
-- **Documentation:** See `docs/` directory
-
----
-
-*Last updated: 2026-05-03*  
-*Status: Public Test V1 — Feedback Welcome*
+## License
+MIT.

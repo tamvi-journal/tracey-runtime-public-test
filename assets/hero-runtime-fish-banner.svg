@@ -1,0 +1,61 @@
+<svg width="1600" height="640" viewBox="0 0 1600 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="60" x2="1520" y2="580" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08101C"/>
+      <stop offset="0.55" stop-color="#0E1728"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </linearGradient>
+    <linearGradient id="line" x1="170" y1="120" x2="1420" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DD3FC"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="fish" x1="610" y1="240" x2="980" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0FBFF"/>
+      <stop offset="0.45" stop-color="#67E8F9"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="640" rx="32" fill="url(#bg)"/>
+
+  <g opacity="0.18">
+    <path d="M120 120H1480" stroke="#334155"/>
+    <path d="M120 220H1480" stroke="#334155"/>
+    <path d="M120 320H1480" stroke="#334155"/>
+    <path d="M120 420H1480" stroke="#334155"/>
+    <path d="M120 520H1480" stroke="#334155"/>
+    <path d="M220 80V560" stroke="#334155"/>
+    <path d="M420 80V560" stroke="#334155"/>
+    <path d="M620 80V560" stroke="#334155"/>
+    <path d="M820 80V560" stroke="#334155"/>
+    <path d="M1020 80V560" stroke="#334155"/>
+    <path d="M1220 80V560" stroke="#334155"/>
+    <path d="M1420 80V560" stroke="#334155"/>
+  </g>
+
+  <rect x="170" y="120" width="1260" height="400" rx="96" stroke="url(#line)" stroke-width="6" opacity="0.9"/>
+  <rect x="210" y="160" width="1180" height="320" rx="72" stroke="#67E8F9" stroke-opacity="0.16" stroke-width="2"/>
+
+  <g opacity="0.55">
+    <path d="M240 200H480" stroke="#67E8F9" stroke-width="2"/>
+    <circle cx="220" cy="200" r="6" fill="#67E8F9"/>
+    <path d="M1120 200H1360" stroke="#67E8F9" stroke-width="2"/>
+    <circle cx="1380" cy="200" r="6" fill="#67E8F9"/>
+    <path d="M240 440H480" stroke="#14B8A6" stroke-width="2"/>
+    <circle cx="220" cy="440" r="6" fill="#14B8A6"/>
+    <path d="M1120 440H1360" stroke="#14B8A6" stroke-width="2"/>
+    <circle cx="1380" cy="440" r="6" fill="#14B8A6"/>
+  </g>
+
+  <path d="M1010 320C952 236 846 199 744 209C786 250 809 290 810 320C809 350 786 390 744 431C846 441 952 404 1010 320Z" fill="url(#fish)"/>
+  <path d="M718 254C683 227 639 209 594 209C633 242 654 280 657 320C654 360 633 398 594 431C639 431 683 413 718 386" fill="#0EA5A4"/>
+  <path d="M720 267C752 286 771 300 785 320C771 340 752 354 720 373" stroke="#CFFAFE" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M864 244C903 256 937 282 959 320C937 358 903 384 864 396" stroke="#CFFAFE" stroke-opacity="0.42" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="885" cy="292" r="7" fill="#0B1220"/>
+
+  <g opacity="0.92">
+    <text x="240" y="278" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">Tracey Runtime Public Test</text>
+    <text x="240" y="328" fill="#93C5FD" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600">evidence • verification • boundary hygiene</text>
+    <text x="240" y="396" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="22">A runtime-discipline harness for AI-assisted work.</text>
+  </g>
+</svg>
