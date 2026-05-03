@@ -1,0 +1,34 @@
+{
+  "viewer_mode": "viewer_only",
+  "actor_permissions": false,
+  "generated_by": "generate_task_index.py",
+  "tasks": [
+    {
+      "task_id": "task_001_ux_target_map",
+      "has_preflight": true,
+      "has_task_run_record": true,
+      "has_verification_record": true,
+      "has_final_response_checklist": true,
+      "verification_status": "passed",
+      "completion_claim_allowed": true
+    },
+    {
+      "task_id": "task_002_minimal_operator_ux",
+      "has_preflight": true,
+      "has_task_run_record": true,
+      "has_verification_record": true,
+      "has_final_response_checklist": true,
+      "verification_status": "passed",
+      "completion_claim_allowed": true
+    },
+    {
+      "task_id": "task_016_canonical_monitor_module",
+      "has_preflight": true,
+      "has_task_run_record": true,
+      "has_verification_record": true,
+      "has_final_response_checklist": true,
+      "verification_status": "passed",
+      "completion_claim_allowed": true
+    }
+  ]
+}

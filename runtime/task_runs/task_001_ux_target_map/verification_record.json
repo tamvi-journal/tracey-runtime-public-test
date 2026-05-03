@@ -1,0 +1,11 @@
+{
+  "intended_action": "create UX target map markdown file",
+  "executed_action": "wrote <repo-root>/runtime/UX_TARGET_MAP.md",
+  "observed_outcome": "Readback matched all required UX target sections and constraints in <repo-root>/runtime/UX_TARGET_MAP.md.",
+  "evidence_handles": [
+    "<repo-root>/runtime/UX_TARGET_MAP.md"
+  ],
+  "verification_status": "passed",
+  "confidence": 1.0,
+  "failure_reason": ""
+}

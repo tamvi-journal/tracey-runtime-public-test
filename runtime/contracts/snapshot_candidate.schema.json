@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "SnapshotCandidate",
+  "required": [
+    "timestamp",
+    "session_id",
+    "event_type",
+    "summary",
+    "details"
+  ],
+  "properties": {
+    "timestamp": {"type": "string"},
+    "session_id": {"type": "string"},
+    "event_type": {"type": "string"},
+    "summary": {"type": "string"},
+    "details": {"type": "object"}
+  }
+}

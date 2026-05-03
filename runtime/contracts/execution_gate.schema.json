@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "ExecutionGateResult",
+  "required": [
+    "decision",
+    "reason",
+    "allowed_toolsets",
+    "disallowed_actions",
+    "verification_required"
+  ],
+  "properties": {
+    "decision": {
+      "enum": [
+        "allow",
+        "sandbox_only",
+        "needs_approval",
+        "deny"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "allowed_toolsets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disallowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification_required": {
+      "type": "boolean"
+    }
+  }
+}

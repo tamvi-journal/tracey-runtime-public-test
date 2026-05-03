@@ -1,0 +1,75 @@
+{
+  "viewer_mode": "viewer_only",
+  "actor_permissions": false,
+  "demo_only": true,
+  "status_legend": {
+    "passed": "Verification succeeded; completion claim may be allowed.",
+    "partial": "Some evidence exists, but completion must be bounded.",
+    "failed": "Verification failed; completion claim is forbidden.",
+    "unknown": "Truth status is unknown; completion claim is forbidden.",
+    "blocked": "Task cannot proceed until blocker is resolved.",
+    "non_authoritative": "Displayed note or memory is not canonical truth.",
+    "sandbox_only": "Action allowed only inside bounded sandbox scope.",
+    "needs_approval": "Human approval required before action.",
+    "deny": "Action must not proceed."
+  },
+  "demo_tasks": [
+    {
+      "task_id": "demo_passed_task",
+      "route_class": "kernel_capability_path",
+      "gate_decision": "sandbox_only",
+      "verification_status": "passed",
+      "completion_claim_allowed": true,
+      "summary": "Demo task with verified outcome."
+    },
+    {
+      "task_id": "demo_partial_task",
+      "route_class": "kernel_capability_path",
+      "gate_decision": "sandbox_only",
+      "verification_status": "partial",
+      "completion_claim_allowed": false,
+      "summary": "Demo task with partial evidence only."
+    },
+    {
+      "task_id": "demo_failed_task",
+      "route_class": "kernel_capability_path",
+      "gate_decision": "sandbox_only",
+      "verification_status": "failed",
+      "completion_claim_allowed": false,
+      "summary": "Demo task with failed verification."
+    },
+    {
+      "task_id": "demo_unknown_task",
+      "route_class": "kernel_direct_reasoning",
+      "gate_decision": "allow",
+      "verification_status": "unknown",
+      "completion_claim_allowed": false,
+      "summary": "Demo task with unknown truth status."
+    },
+    {
+      "task_id": "demo_needs_approval_task",
+      "route_class": "kernel_capability_path",
+      "gate_decision": "needs_approval",
+      "verification_status": "blocked",
+      "completion_claim_allowed": false,
+      "summary": "Demo task blocked until human approval."
+    },
+    {
+      "task_id": "demo_denied_task",
+      "route_class": "kernel_capability_path",
+      "gate_decision": "deny",
+      "verification_status": "blocked",
+      "completion_claim_allowed": false,
+      "summary": "Demo task denied by gate."
+    },
+    {
+      "task_id": "demo_non_authoritative_note",
+      "route_class": "kernel_direct_reasoning",
+      "gate_decision": "allow",
+      "verification_status": "unknown",
+      "canonical_status": "non_authoritative",
+      "completion_claim_allowed": false,
+      "summary": "Demo vault or memory note that must not be treated as canonical truth."
+    }
+  ]
+}

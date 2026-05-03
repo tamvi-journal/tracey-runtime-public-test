@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "EvidenceLedgerEntry",
+  "required": [
+    "tool",
+    "purpose",
+    "result_type",
+    "evidence_handle",
+    "verification_status"
+  ],
+  "properties": {
+    "tool": {"type": "string"},
+    "purpose": {"type": "string"},
+    "result_type": {"enum": ["evidence"]},
+    "evidence_handle": {"type": "string"},
+    "verification_status": {
+      "enum": ["pending", "passed", "partial", "failed", "unknown"]
+    }
+  }
+}

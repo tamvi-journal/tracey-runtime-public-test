@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "SessionStatusMetadata",
+  "required": [
+    "current_status",
+    "primary_focus",
+    "open_loops",
+    "last_verified_outcomes",
+    "recent_decisions",
+    "relevant_entities",
+    "active_skills",
+    "risk_notes",
+    "next_hint"
+  ],
+  "properties": {
+    "current_status": {
+      "type": "string"
+    },
+    "primary_focus": {
+      "type": "string"
+    },
+    "open_loops": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_verified_outcomes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recent_decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relevant_entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "active_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_hint": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "ObsidianVaultWrite",
+  "required": [
+    "vault_path",
+    "note_type",
+    "title",
+    "tags",
+    "summary",
+    "body_markdown",
+    "source_session_id",
+    "verification_status",
+    "canonical_status"
+  ],
+  "properties": {
+    "vault_path": {
+      "type": "string"
+    },
+    "note_type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "body_markdown": {
+      "type": "string"
+    },
+    "source_session_id": {
+      "type": "string"
+    },
+    "verification_status": {
+      "enum": [
+        "pending",
+        "passed",
+        "partial",
+        "failed",
+        "unknown"
+      ]
+    },
+    "canonical_status": {
+      "enum": [
+        "non_authoritative",
+        "candidate",
+        "canonical_reference"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tracey-runtime-public-test"
+version = "0.1.0"
+description = "Public test harness for bounded AI runtime discipline"
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Tracey"}]
+
+[tool.setuptools]
+packages = ["runtime"]
+
+[tool.setuptools.package-dir]
+runtime = "runtime"

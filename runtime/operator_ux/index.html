@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimal Local Operator UX Shell</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --line: #334155;
+      --pass: #22c55e;
+      --partial: #f59e0b;
+      --failed: #ef4444;
+      --unknown: #a78bfa;
+      --blocked: #f97316;
+      --nonauth: #38bdf8;
+      --sandbox: #06b6d4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    .subtitle { color: var(--muted); margin-bottom: 20px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .wide { margin-bottom: 16px; }
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .value { font-size: 16px; }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border: 1px solid currentColor;
+    }
+    .passed { color: var(--pass); }
+    .partial { color: var(--partial); }
+    .failed { color: var(--failed); }
+    .unknown { color: var(--unknown); }
+    .blocked { color: var(--blocked); }
+    .nonauth { color: var(--nonauth); }
+    .sandbox { color: var(--sandbox); }
+    ul { margin: 8px 0 0 20px; }
+    code {
+      background: var(--panel-2);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #c4b5fd;
+    }
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Minimal Local Operator UX Shell</h1>
+    <p class="subtitle">Static local HTML viewer for one task run. Display only. No backend, no network, no execution buttons.</p>
+
+    <div class="card wide">
+      <h2>Status Legend</h2>
+      <span class="badge passed">PASSED</span>
+      <span class="badge partial">PARTIAL</span>
+      <span class="badge failed">FAILED</span>
+      <span class="badge unknown">UNKNOWN</span>
+      <span class="badge blocked">BLOCKED</span>
+      <span class="badge nonauth">NON-AUTHORITATIVE</span>
+      <span class="badge sandbox">SANDBOX_ONLY</span>
+      <p class="note">Non-authoritative memory or vault notes are not presented as truth in this shell.</p>
+    </div>
+
+    <div class="grid">
+      <section class="card">
+        <div class="label">Task ID</div>
+        <div class="value">task_001_ux_target_map</div>
+      </section>
+      <section class="card">
+        <div class="label">User request / task goal</div>
+        <div class="value">Create UX target map markdown file</div>
+      </section>
+      <section class="card">
+        <div class="label">Route class</div>
+        <div class="value"><code>kernel_capability_path</code></div>
+      </section>
+      <section class="card">
+        <div class="label">Gate decision</div>
+        <div class="value"><span class="badge sandbox">SANDBOX_ONLY</span><code>sandbox_only</code></div>
+      </section>
+      <section class="card">
+        <div class="label">Side effect status</div>
+        <div class="value">yes</div>
+      </section>
+      <section class="card">
+        <div class="label">Approval required?</div>
+        <div class="value">no</div>
+      </section>
+    </div>
+
+    <section class="card wide">
+      <h2>Scope</h2>
+      <div class="label">Allowed scope</div>
+      <div class="value">create one markdown file inside <repo-root>/runtime/</div>
+      <div class="label" style="margin-top:12px;">Forbidden scope</div>
+      <ul>
+        <li>no repo push</li>
+        <li>no upstream private runtime</li>
+        <li>no external API</li>
+        <li>no external knowledge store write</li>
+      </ul>
+    </section>
+
+    <section class="card wide">
+      <h2>Evidence and Verification</h2>
+      <div class="label">Evidence handles</div>
+      <ul>
+        <li><code><repo-root>/runtime/UX_TARGET_MAP.md</code></li>
+      </ul>
+      <div class="label" style="margin-top:12px;">Verification status</div>
+      <div class="value"><span class="badge passed">PASSED</span><code>passed</code></div>
+      <div class="label" style="margin-top:12px;">Completion claim allowed?</div>
+      <div class="value">yes</div>
+    </section>
+
+    <section class="card wide">
+      <h2>Final Response Checklist</h2>
+      <ul>
+        <li>[x] Did MainBrain-style synthesis speak last?</li>
+        <li>[x] Is tool/delegate output treated only as evidence?</li>
+        <li>[x] Is verification_status preserved?</li>
+        <li>[x] If not passed, did we avoid completion wording?</li>
+        <li>[x] Did we separate attempted/executed/observed/verified?</li>
+        <li>[x] Did we mention unresolved open loops?</li>
+        <li>[x] Did we avoid overstating truth?</li>
+      </ul>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <div class="label">Open loops</div>
+        <div class="value">build minimal operator UX shell</div>
+      </section>
+      <section class="card">
+        <div class="label">Next hint</div>
+        <div class="value">review whether local UX reduces operator friction</div>
+      </section>
+      <section class="card">
+        <div class="label">Memory / vault authority</div>
+        <div class="value"><span class="badge nonauth">NON-AUTHORITATIVE</span>not used as truth here</div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

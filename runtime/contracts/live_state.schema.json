@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "LiveState",
+  "required": [
+    "active_mode",
+    "task_focus",
+    "open_loops",
+    "verification_posture",
+    "current_warnings",
+    "last_verified_result",
+    "mirror_annotation",
+    "mirror_priority"
+  ],
+  "properties": {
+    "active_mode": {
+      "type": "string"
+    },
+    "task_focus": {
+      "type": "string"
+    },
+    "open_loops": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification_posture": {
+      "type": "string"
+    },
+    "current_warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_verified_result": {
+      "type": "string"
+    },
+    "mirror_annotation": {
+      "type": "string"
+    },
+    "mirror_priority": {
+      "type": "string"
+    }
+  }
+}

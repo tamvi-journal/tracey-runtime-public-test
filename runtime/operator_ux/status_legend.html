@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Status Legend + Failure-State Demo</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --line: #334155;
+      --passed: #22c55e;
+      --partial: #f59e0b;
+      --failed: #ef4444;
+      --unknown: #a78bfa;
+      --blocked: #f97316;
+      --nonauth: #38bdf8;
+      --sandbox: #06b6d4;
+      --approval: #facc15;
+      --deny: #fb7185;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .value { font-size: 15px; }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .passed { color: var(--passed); }
+    .partial { color: var(--partial); }
+    .failed { color: var(--failed); }
+    .unknown { color: var(--unknown); }
+    .blocked { color: var(--blocked); }
+    .non_authoritative { color: var(--nonauth); }
+    .sandbox_only { color: var(--sandbox); }
+    .needs_approval { color: var(--approval); }
+    .deny { color: var(--deny); }
+    .warning {
+      border-left: 4px solid var(--partial);
+      padding-left: 12px;
+    }
+    ul { margin: 8px 0 0 20px; }
+    code {
+      background: var(--panel-2);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #c4b5fd;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Status Legend + Failure-State Demo</h1>
+    <p>Static local HTML only. No external libraries. No network calls. No backend. No execution buttons.</p>
+
+    <section class="card warning">
+      <h2>Viewer-only warning</h2>
+      <p>This page is a static status demo.</p>
+      <p>This UX is viewer-only.</p>
+      <p>It does not execute actions.</p>
+      <p>It does not simulate real completion.</p>
+      <p>It does not mutate memory.</p>
+      <p>It does not write to external knowledge store.</p>
+      <p>Demo records are not canonical task history.</p>
+    </section>
+
+    <section class="card">
+      <h2>Status legend</h2>
+      <div>
+        <span class="badge passed">passed</span>
+        <span class="badge partial">partial</span>
+        <span class="badge failed">failed</span>
+        <span class="badge unknown">unknown</span>
+        <span class="badge blocked">blocked</span>
+        <span class="badge non_authoritative">non_authoritative</span>
+        <span class="badge sandbox_only">sandbox_only</span>
+        <span class="badge needs_approval">needs_approval</span>
+        <span class="badge deny">deny</span>
+      </div>
+      <ul>
+        <li><code>passed</code>: Verification succeeded; completion claim may be allowed.</li>
+        <li><code>partial</code>: Some evidence exists, but completion must be bounded.</li>
+        <li><code>failed</code>: Verification failed; completion claim is forbidden.</li>
+        <li><code>unknown</code>: Truth status is unknown; completion claim is forbidden.</li>
+        <li><code>blocked</code>: Task cannot proceed until blocker is resolved.</li>
+        <li><code>non_authoritative</code>: Displayed note or memory is not canonical truth.</li>
+        <li><code>sandbox_only</code>: Action allowed only inside bounded sandbox scope.</li>
+        <li><code>needs_approval</code>: Human approval required before action.</li>
+        <li><code>deny</code>: Action must not proceed.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Demo tasks</h2>
+      <div class="grid">
+        <section class="card">
+          <h3>demo_passed_task</h3>
+          <div class="label">Gate decision</div>
+          <div class="value"><span class="badge sandbox_only">sandbox_only</span></div>
+          <div class="label">Verification status</div>
+          <div class="value"><span class="badge passed">passed</span></div>
+          <div class="label">Completion claim allowed?</div>
+          <div class="value">yes</div>
+          <div class="label">Summary</div>
+          <div class="value">Demo task with verified outcome.</div>
+        </section>
+
+        <section class="card">
+          <h3>demo_partial_task</h3>
+          <div class="label">Gate decision</div>
+          <div class="value"><span class="badge sandbox_only">sandbox_only</span></div>
+          <div class="label">Verification status</div>
+          <div class="value"><span class="badge partial">partial</span></div>
+          <div class="label">Completion claim allowed?</div>
+          <div class="value">no</div>
+          <div class="label">Summary</div>
+          <div class="value">Demo task with partial evidence only.</div>
+        </section>
+
+        <section class="card">
+          <h3>demo_failed_task</h3>
+          <div class="label">Gate decision</div>
+          <div class="value"><span class="badge sandbox_only">sandbox_only</span></div>
+          <div class="label">Verification status</div>
+          <div class="value"><span class="badge failed">failed</span></div>
+          <div class="label">Completion claim allowed?</div>
+          <div class="value">no</div>
+          <div class="label">Summary</div>
+          <div class="value">Demo task with failed verification.</div>
+        </section>
+
+        <section class="card">
+          <h3>demo_unknown_task</h3>
+          <div class="label">Gate decision</div>
+          <div class="value"><code>allow</code></div>
+          <div class="label">Verification status</div>
+          <div class="value"><span class="badge unknown">unknown</span></div>
+          <div class="label">Completion claim allowed?</div>
+          <div class="value">no</div>
+          <div class="label">Summary</div>
+          <div class="value">Demo task with unknown truth status.</div>
+        </section>
+
+        <section class="card">
+          <h3>demo_needs_approval_task</h3>
+          <div class="label">Gate decision</div>
+          <div class="value"><span class="badge needs_approval">needs_approval</span></div>
+          <div class="label">Verification status</div>
+          <div class="value"><span class="badge blocked">blocked</span></div>
+          <div class="label">Completion claim allowed?</div>
+          <div class="value">no</div>
+          <div class="label">Summary</div>
+          <div class="value">Demo task blocked until human approval.</div>
+        </section>
+
+        <section class="card">
+          <h3>demo_denied_task</h3>
+          <div class="label">Gate decision</div>
+          <div class="value"><span class="badge deny">deny</span></div>
+          <div class="label">Verification status</div>
+          <div class="value"><span class="badge blocked">blocked</span></div>
+          <div class="label">Completion claim allowed?</div>
+          <div class="value">no</div>
+          <div class="label">Summary</div>
+          <div class="value">Demo task denied by gate.</div>
+        </section>
+
+        <section class="card">
+          <h3>demo_non_authoritative_note</h3>
+          <div class="label">Gate decision</div>
+          <div class="value"><code>allow</code></div>
+          <div class="label">Verification status</div>
+          <div class="value"><span class="badge unknown">unknown</span></div>
+          <div class="label">Canonical status</div>
+          <div class="value"><span class="badge non_authoritative">non_authoritative</span></div>
+          <div class="label">Completion claim allowed?</div>
+          <div class="value">no</div>
+          <div class="label">Summary</div>
+          <div class="value">Demo vault or memory note that must not be treated as canonical truth.</div>
+        </section>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

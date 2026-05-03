@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "FinalResult",
+  "required": [
+    "speaker",
+    "final_text",
+    "completion_claim_allowed",
+    "verification_status",
+    "evidence_handles"
+  ],
+  "properties": {
+    "speaker": {"enum": ["MainBrain"]},
+    "final_text": {"type": "string"},
+    "completion_claim_allowed": {"type": "boolean"},
+    "verification_status": {
+      "enum": ["pending", "passed", "partial", "failed", "unknown"]
+    },
+    "evidence_handles": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "evidence_summary": {"type": "object"}
+  }
+}

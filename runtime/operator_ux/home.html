@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tracey Runtime Public Test Viewer</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0f172a; --panel:#111827; --line:#334155; --text:#e5e7eb; --muted:#94a3b8; --warn:#f59e0b; --ok:#22c55e; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+    .wrap { max-width:1080px; margin:0 auto; padding:24px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; }
+    .warning { border-left:4px solid var(--warn); padding-left:14px; }
+    .status { border-left:4px solid var(--ok); padding-left:14px; }
+    h1,h2 { margin-top:0; }
+    ul { margin:8px 0 0 20px; }
+    li { margin-bottom:8px; }
+    a { color:#93c5fd; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    code { background:#1f2937; padding:2px 6px; border-radius:6px; color:#c4b5fd; }
+    .note { color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Tracey Runtime Public Test Viewer</h1>
+    <p class="note">Static browser pages for the public test repo. No backend. No network calls. No external libraries. No execution buttons.</p>
+
+    <section class="card warning">
+      <h2>Viewer-only warning</h2>
+      <p>This viewer displays audit and boundary state only.</p>
+      <p>It does not execute actions.</p>
+      <p>It does not approve actions.</p>
+      <p>It does not mutate memory.</p>
+      <p>It does not write to external systems.</p>
+      <p>It does not represent production authority.</p>
+    </section>
+
+    <section class="card">
+      <h2>Open these pages</h2>
+      <ul>
+        <li><a href="index.html">Single-task viewer</a></li>
+        <li><a href="multi_task_view.html">Multi-task viewer</a></li>
+        <li><a href="task_run_index.html">Generated task index</a></li>
+        <li><a href="status_legend.html">Status legend and failure-state demo</a></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Helpful docs</h2>
+      <ul>
+        <li><a href="README.md">Viewer README</a></li>
+        <li><a href="VIEWER_LIMITS.md">Viewer limits</a></li>
+        <li><a href="UX_USABILITY_REVIEW.md">Viewer usability review</a></li>
+        <li><a href="../COMPLETION_CLAIM_RULES.md">Completion claim rules</a></li>
+        <li><a href="../TASK_RUN_PROTOCOL.md">Task-run protocol</a></li>
+        <li><a href="../PREFLIGHT_CHECKLIST.md">Preflight checklist</a></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>What to inspect</h2>
+      <ul>
+        <li>route class</li>
+        <li>gate decision</li>
+        <li>evidence handles</li>
+        <li>verification status</li>
+        <li>whether a completion claim is allowed</li>
+        <li>whether the viewer stays read-only</li>
+      </ul>
+    </section>
+
+    <section class="card status">
+      <h2>Current viewer status</h2>
+      <ul>
+        <li>viewer-only</li>
+        <li>single-task and multi-task examples available</li>
+        <li>generated task index available</li>
+        <li>no actor authority</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

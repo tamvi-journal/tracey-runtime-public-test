@@ -1,0 +1,24 @@
+{
+  "task_id": "task_001_ux_target_map",
+  "task_goal": "Create UX target map markdown file",
+  "route_class": "kernel_capability_path",
+  "gate_decision": "sandbox_only",
+  "side_effect": true,
+  "approval_required": false,
+  "allowed_scope": "create one markdown file inside <repo-root>/runtime/",
+  "forbidden_scope": [
+    "no repo push",
+    "no upstream private runtime",
+    "no external API",
+    "no external knowledge store write"
+  ],
+  "evidence_handles": [
+    "<repo-root>/runtime/UX_TARGET_MAP.md"
+  ],
+  "verification_status": "passed",
+  "completion_claim_allowed": true,
+  "open_loops": [
+    "build minimal operator UX shell"
+  ],
+  "next_hint": "review whether local UX reduces operator friction"
+}

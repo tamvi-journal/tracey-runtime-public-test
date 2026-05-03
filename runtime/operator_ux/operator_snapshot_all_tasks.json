@@ -1,0 +1,42 @@
+{
+  "tasks": [
+    {
+      "task_id": "task_001_ux_target_map",
+      "route_class": "kernel_capability_path",
+      "gate_decision": "sandbox_only",
+      "verification_status": "passed",
+      "completion_claim_allowed": true,
+      "evidence_handles": [
+        "<repo-root>/runtime/UX_TARGET_MAP.md"
+      ],
+      "summary": "Created UX target map markdown file."
+    },
+    {
+      "task_id": "task_002_minimal_operator_ux",
+      "route_class": "kernel_capability_path",
+      "gate_decision": "sandbox_only",
+      "verification_status": "passed",
+      "completion_claim_allowed": true,
+      "evidence_handles": [
+        "<repo-root>/runtime/operator_ux/index.html",
+        "<repo-root>/runtime/operator_ux/operator_snapshot_task_001.json",
+        "<repo-root>/runtime/operator_ux/README.md"
+      ],
+      "summary": "Created minimal local operator UX shell."
+    },
+    {
+      "task_id": "task_003_ux_usability_review",
+      "route_class": "kernel_capability_path",
+      "gate_decision": "sandbox_only",
+      "verification_status": "passed",
+      "completion_claim_allowed": true,
+      "evidence_handles": [
+        "<repo-root>/runtime/operator_ux/UX_USABILITY_REVIEW.md",
+        "<repo-root>/runtime/operator_ux/VIEWER_LIMITS.md"
+      ],
+      "summary": "Reviewed minimal UX usability and confirmed friction score improved from 3 to 4."
+    }
+  ],
+  "viewer_mode": "viewer_only",
+  "actor_permissions": false
+}

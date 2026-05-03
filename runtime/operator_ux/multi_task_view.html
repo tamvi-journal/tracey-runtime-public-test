@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-task Snapshot Viewer</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --line: #334155;
+      --pass: #22c55e;
+      --sandbox: #06b6d4;
+      --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .value { font-size: 15px; }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .passed { color: var(--pass); }
+    .sandbox { color: var(--sandbox); }
+    .warn { color: var(--warn); }
+    ul { margin: 8px 0 0 20px; }
+    code {
+      background: var(--panel-2);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #c4b5fd;
+    }
+    .warning {
+      border-left: 4px solid var(--warn);
+      padding-left: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Multi-task Snapshot Viewer</h1>
+    <p>Static local HTML only. No backend. No network calls. No external libraries. No execution buttons.</p>
+
+    <section class="card warning">
+      <h2>Viewer-only warning</h2>
+      <p>This UX is viewer-only.</p>
+      <p>It does not execute actions.</p>
+      <p>It does not approve actions.</p>
+      <p>It does not mutate memory.</p>
+      <p>It does not write to external knowledge store.</p>
+    </section>
+
+    <section class="card">
+      <h2>Task list</h2>
+      <ul>
+        <li><code>task_001_ux_target_map</code></li>
+        <li><code>task_002_minimal_operator_ux</code></li>
+        <li><code>task_003_ux_usability_review</code></li>
+      </ul>
+    </section>
+
+    <div class="task-grid">
+      <section class="card">
+        <h2>task_001_ux_target_map</h2>
+        <div class="label">Route class</div>
+        <div class="value"><code>kernel_capability_path</code></div>
+        <div class="label">Gate decision</div>
+        <div class="value"><span class="badge sandbox">SANDBOX_ONLY</span><code>sandbox_only</code></div>
+        <div class="label">Verification status</div>
+        <div class="value"><span class="badge passed">PASSED</span><code>passed</code></div>
+        <div class="label">Completion claim allowed?</div>
+        <div class="value">yes</div>
+        <div class="label">Evidence handles</div>
+        <ul>
+          <li><code><repo-root>/runtime/UX_TARGET_MAP.md</code></li>
+        </ul>
+        <div class="label">Summary</div>
+        <div class="value">Created UX target map markdown file.</div>
+      </section>
+
+      <section class="card">
+        <h2>task_002_minimal_operator_ux</h2>
+        <div class="label">Route class</div>
+        <div class="value"><code>kernel_capability_path</code></div>
+        <div class="label">Gate decision</div>
+        <div class="value"><span class="badge sandbox">SANDBOX_ONLY</span><code>sandbox_only</code></div>
+        <div class="label">Verification status</div>
+        <div class="value"><span class="badge passed">PASSED</span><code>passed</code></div>
+        <div class="label">Completion claim allowed?</div>
+        <div class="value">yes</div>
+        <div class="label">Evidence handles</div>
+        <ul>
+          <li><code><repo-root>/runtime/operator_ux/index.html</code></li>
+          <li><code><repo-root>/runtime/operator_ux/operator_snapshot_task_001.json</code></li>
+          <li><code><repo-root>/runtime/operator_ux/README.md</code></li>
+        </ul>
+        <div class="label">Summary</div>
+        <div class="value">Created minimal local operator UX shell.</div>
+      </section>
+
+      <section class="card">
+        <h2>task_003_ux_usability_review</h2>
+        <div class="label">Route class</div>
+        <div class="value"><code>kernel_capability_path</code></div>
+        <div class="label">Gate decision</div>
+        <div class="value"><span class="badge sandbox">SANDBOX_ONLY</span><code>sandbox_only</code></div>
+        <div class="label">Verification status</div>
+        <div class="value"><span class="badge passed">PASSED</span><code>passed</code></div>
+        <div class="label">Completion claim allowed?</div>
+        <div class="value">yes</div>
+        <div class="label">Evidence handles</div>
+        <ul>
+          <li><code><repo-root>/runtime/operator_ux/UX_USABILITY_REVIEW.md</code></li>
+          <li><code><repo-root>/runtime/operator_ux/VIEWER_LIMITS.md</code></li>
+        </ul>
+        <div class="label">Summary</div>
+        <div class="value">Reviewed minimal UX usability and confirmed friction score improved from 3 to 4.</div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

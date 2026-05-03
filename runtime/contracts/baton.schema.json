@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "Baton",
+  "required": [
+    "task_focus",
+    "active_mode",
+    "verification_status",
+    "primary_risk",
+    "monitor_summary",
+    "next_hint",
+    "open_loop_count"
+  ],
+  "properties": {
+    "task_focus": {
+      "type": "string"
+    },
+    "active_mode": {
+      "type": "string"
+    },
+    "verification_status": {
+      "type": "string"
+    },
+    "primary_risk": {
+      "type": "string"
+    },
+    "monitor_summary": {
+      "type": "string"
+    },
+    "next_hint": {
+      "type": "string"
+    },
+    "open_loop_count": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

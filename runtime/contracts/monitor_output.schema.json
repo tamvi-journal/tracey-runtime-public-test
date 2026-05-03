@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "MonitorOutput",
+  "required": [
+    "drift_risk",
+    "ambiguity_risk",
+    "fake_progress_risk",
+    "mode_decay_risk",
+    "overreach_risk",
+    "evidence_gap_risk",
+    "recommended_intervention",
+    "notes"
+  ],
+  "properties": {
+    "drift_risk": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "ambiguity_risk": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "fake_progress_risk": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "mode_decay_risk": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "overreach_risk": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "evidence_gap_risk": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "recommended_intervention": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "MirrorBridge",
+  "required": [
+    "primary_risk",
+    "risk_level",
+    "recommended_intervention",
+    "state_annotation"
+  ],
+  "properties": {
+    "primary_risk": {"type": "string"},
+    "risk_level": {"type": "number"},
+    "recommended_intervention": {"type": "string"},
+    "state_annotation": {"type": "string"}
+  }
+}

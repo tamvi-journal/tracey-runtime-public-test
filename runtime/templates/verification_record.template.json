@@ -1,0 +1,9 @@
+{
+  "intended_action": "",
+  "executed_action": "",
+  "observed_outcome": "",
+  "evidence_handles": [],
+  "verification_status": "pending|passed|partial|failed|unknown",
+  "confidence": 0.0,
+  "failure_reason": ""
+}

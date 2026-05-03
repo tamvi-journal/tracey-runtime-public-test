@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "VerificationRecord",
+  "required": [
+    "intended_action",
+    "executed_action",
+    "observed_outcome",
+    "evidence_handles",
+    "verification_status",
+    "confidence",
+    "failure_reason"
+  ],
+  "properties": {
+    "intended_action": {
+      "type": "string"
+    },
+    "executed_action": {
+      "type": "string"
+    },
+    "observed_outcome": {
+      "type": "string"
+    },
+    "evidence_handles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification_status": {
+      "enum": [
+        "pending",
+        "passed",
+        "partial",
+        "failed",
+        "unknown"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "failure_reason": {
+      "type": "string"
+    }
+  }
+}
