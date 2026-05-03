@@ -22,6 +22,23 @@ It exists so other people can:
 - not the full private Tracey workspace
 - not proof of continuity by itself
 
+## How this differs from prompt/skill frameworks
+
+Tracey is not a motivational skill and does not rely on the agent "feeling encouraged" to behave better.
+
+Prompt/skill frameworks can improve agent posture.
+Tracey focuses on runtime discipline:
+
+- evidence is recorded before authority is granted
+- completion claims require verification
+- UI surfaces are viewer-only unless actor authority is explicitly designed
+- failure handling is expressed as protocol, not emotional pressure
+- governance records decisions but does not silently self-tune
+
+In short:
+**skills change how an agent tries;**
+**Tracey changes what the system is allowed to accept as done.**
+
 ## Quickstart
 ```bash
 git clone <your-new-repo-url>
